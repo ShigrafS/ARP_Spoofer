@@ -18,16 +18,16 @@ Normal ARP Response (Ignored): The actual router responds with its legitimate MA
 Spoofed ARP Response: The attacker uses Scapy to create a fake ARP response with the router's IP address and the attacker's own MAC address. The attacker then sends this spoofed response to the victim's network.
 Victim Updates ARP Table: The victim receives the spoofed response and mistakenly believes the attacker is the router. It updates its ARP table with the attacker's MAC address for the router's IP.
 
-#Man-in-the-Middle (MITM):
+*Man-in-the-Middle (MITM):*
 
 Victim-Attacker Communication: Now, whenever the victim tries to communicate with the router (like accessing the internet), the traffic gets redirected to the attacker instead.
 Sniffing Network Traffic: The attacker can now "sniff" the unencrypted data flowing between the victim and the attacker (pretending to be the router).
 
-#Maintaining the Attack (Forwarding Traffic):
+*Maintaining the Attack (Forwarding Traffic):*
 
 Denial-of-Service (DoS) Risk: By default, the attacker's machine doesn't forward traffic by itself. This disrupts the victim's internet connection and makes the attack obvious.
 Enabling Packet Forwarding: The attacker needs to enable packet forwarding on their machine by setting /proc/sys/net/ipv4/ip_forward to 1. This allows the attacker to route traffic between the victim and the real router, maintaining internet access for the victim while still intercepting communication.
 
-#Detection:
+*Detection:*
 
 The victim can potentially discover the attack by checking their ARP table using the arp -a command.
