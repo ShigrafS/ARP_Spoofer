@@ -5,7 +5,7 @@ The ARP spoofing attack is the foundation for intercepting connections between d
 
 The whole idea is send responses ("malformed packets") to the router and to the victim telling that the router is the MAC address of the attacker machine, this will change the whole data flow and the victim's traffic will be forwarded to the attacker machine.
 
-#The Setup:
+*The Setup:
 
 Victim Machine (Windows 10): 192.168.1.130
 Attacker Machine (Kali): 192.168.1.111
